@@ -1,0 +1,1323 @@
+/* =========================
+   1. VARIABLES & RESET
+========================= */
+
+:root {
+  --ink: #20202d;
+  --muted: #757585;
+  --line: #e9e9ef;
+  --purple: #635bda;
+  --light-purple: #f0efff;
+  --background: #fafafd;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  color: var(--ink);
+  background: var(--background);
+}
+
+
+/* =========================
+   2. SIDEBAR
+========================= */
+
+.sidebar {
+  position: fixed;
+  width: 244px;
+  height: 100vh;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+
+  background: var(--white);
+  border-right: 1px solid var(--line);
+}
+
+/* Brand */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px 30px;
+
+  font: 800 20px "Plus Jakarta Sans";
+}
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 9px;
+  background: var(--purple);
+  color: white;
+
+  font-size: 16px;
+}
+
+/* Workspace */
+
+.workspace {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 9px 10px;
+  margin-bottom: 25px;
+
+  border: 1px solid var(--line);
+  border-radius: 10px;
+
+  font-size: 12px;
+}
+
+.workspace-icon {
+  padding: 6px 8px;
+
+  background: #ffe7d8;
+  color: #d96721;
+
+  border-radius: 7px;
+
+  font-weight: bold;
+}
+
+.workspace small,
+.profile small,
+.support small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.chev {
+  margin-left: auto;
+  color: #777;
+}
+
+/* Navigation */
+
+nav {
+  display: grid;
+  gap: 4px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 11px 12px;
+
+  color: #656576;
+  text-decoration: none;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+}
+
+.nav-item span {
+  width: 15px;
+  text-align: center;
+  font-size: 17px;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background: var(--light-purple);
+  color: #554ccc;
+  font-weight: 600;
+}
+
+.nav-item b {
+  margin-left: auto;
+
+  padding: 1px 6px;
+
+  background: #e1defe;
+  border-radius: 9px;
+
+  font-size: 11px;
+}
+
+/* Sidebar bottom */
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.support {
+  display: flex;
+  gap: 9px;
+
+  margin: 18px 8px 0;
+  padding: 13px 10px;
+
+  background: #f8f8fc;
+  border-radius: 10px;
+
+  font-size: 12px;
+}
+
+.support > span {
+  width: 19px;
+  height: 19px;
+
+  text-align: center;
+
+  background: #928ce8;
+  color: white;
+
+  border-radius: 50%;
+
+  font-weight: bold;
+}
+
+
+/* =========================
+   3. MAIN AREA & HEADER
+========================= */
+
+main {
+  min-height: 100vh;
+  margin-left: 244px;
+}
+
+header {
+  height: 74px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 46px;
+
+  background: white;
+  border-bottom: 1px solid var(--line);
+}
+
+.crumb {
+  color: #707080;
+  font-size: 13px;
+}
+
+.crumb span {
+  margin: 0 8px;
+  color: #b5b5c2;
+}
+
+.header-actions,
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Notification */
+
+.icon-btn {
+  position: relative;
+
+  border: 0;
+  background: transparent;
+
+  color: #515164;
+  font-size: 20px;
+}
+
+.icon-btn i {
+  position: absolute;
+
+  width: 6px;
+  height: 6px;
+
+  top: 2px;
+  right: 1px;
+
+  background: #f05b54;
+  border-radius: 50%;
+}
+
+/* Profile */
+
+.profile {
+  padding-left: 20px;
+
+  border-left: 1px solid var(--line);
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   4. AVATARS
+========================= */
+
+.avatar {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: white;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.avatar-small {
+  width: 33px;
+  height: 33px;
+
+  font-size: 10px;
+}
+
+.orange {
+  background: linear-gradient(135deg, #f2a55d, #d56553);
+}
+
+.a1 {
+  background: #df7770;
+}
+
+.a2 {
+  background: #5c9bb5;
+}
+
+.a3 {
+  background: #9879b4;
+}
+
+.a4 {
+  background: #d28e58;
+}
+
+.a5 {
+  background: #5ea896;
+}
+
+.a6 {
+  background: #7772c2;
+}
+
+.a7 {
+  background: #c9799f;
+}
+
+.a8 {
+  background: #5f798f;
+}
+
+
+/* =========================
+   5. CONTENT
+========================= */
+
+.content {
+  padding: 39px 46px;
+}
+
+.title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.title-row h1 {
+  margin: 0 0 7px;
+
+  font: 800 26px "Plus Jakarta Sans";
+}
+
+.title-row p {
+  margin: 0;
+
+  color: var(--muted);
+  font-size: 14px;
+}
+
+
+/* =========================
+   6. BUTTONS
+========================= */
+
+.primary {
+  padding: 11px 16px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: var(--purple);
+  color: white;
+
+  font: 600 13px "DM Sans";
+
+  box-shadow: 0 3px 6px #635bda33;
+
+  cursor: pointer;
+}
+
+.primary span {
+  margin-right: 5px;
+  font-size: 17px;
+}
+
+.secondary,
+.filter,
+.sort {
+  padding: 0 12px;
+
+  background: white;
+
+  border: 1px solid #dedee7;
+  border-radius: 7px;
+
+  font: 500 12px "DM Sans";
+
+  cursor: pointer;
+}
+
+.secondary {
+  height: 38px;
+}
+
+
+/* =========================
+   7. STAT CARDS
+========================= */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+
+  margin: 32px 0 25px;
+}
+
+.stats article {
+  display: flex;
+  gap: 13px;
+
+  padding: 18px;
+
+  background: white;
+
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.stat-icon {
+  width: 37px;
+  height: 37px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 9px;
+
+  font-size: 19px;
+}
+
+.stat-icon.purple {
+  background: #eeecff;
+  color: #635bda;
+}
+
+.stat-icon.amber {
+  background: #fff4df;
+  color: #e59622;
+}
+
+.stat-icon.blue {
+  background: #e6f5ff;
+  color: #368ed2;
+}
+
+.stat-icon.green {
+  background: #e7f8ee;
+  color: #31a66b;
+}
+
+.stats small {
+  display: block;
+
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.stats strong {
+  display: inline-block;
+
+  margin: 4px 0;
+
+  font: 700 23px "Plus Jakarta Sans";
+}
+
+.stats em {
+  display: block;
+
+  color: #9393a0;
+
+  font-size: 10px;
+  font-style: normal;
+}
+
+.stats em.positive {
+  color: #2fa769;
+}
+
+
+/* =========================
+   8. TABLE CARD
+========================= */
+
+.table-card {
+  position: relative;
+
+  background: white;
+
+  border: 1px solid var(--line);
+  border-radius: 11px;
+}
+
+/* Table tools */
+
+.table-tools {
+  display: flex;
+  gap: 10px;
+
+  padding: 16px;
+
+  border-bottom: 1px solid var(--line);
+}
+
+/* Search */
+
+.search {
+  width: 280px;
+  height: 37px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 10px;
+
+  border: 1px solid #dedee7;
+  border-radius: 7px;
+
+  color: #9292a1;
+}
+
+.search input {
+  width: 100%;
+
+  margin-left: 8px;
+
+  border: 0;
+  outline: 0;
+
+  font: 13px "DM Sans";
+}
+
+/* Filter & sort */
+
+.filter b {
+  margin-left: 14px;
+}
+
+.sort {
+  margin-left: auto;
+}
+
+
+/* =========================
+   9. FILTER MENU
+========================= */
+
+.filter-menu {
+  position: absolute;
+
+  top: 57px;
+  left: 315px;
+
+  z-index: 3;
+
+  display: none;
+  width: 150px;
+
+  padding: 9px;
+
+  background: white;
+
+  border: 1px solid var(--line);
+  border-radius: 8px;
+
+  box-shadow: 0 9px 25px #24243d18;
+}
+
+.filter-menu.open {
+  display: grid;
+}
+
+.filter-menu strong {
+  padding: 5px;
+
+  color: #888;
+
+  font-size: 11px;
+}
+
+.filter-menu button {
+  padding: 7px;
+
+  border: 0;
+  border-radius: 4px;
+
+  background: white;
+
+  text-align: left;
+
+  font: 12px "DM Sans";
+}
+
+.filter-menu button:hover {
+  background: var(--light-purple);
+  color: var(--purple);
+}
+
+
+/* =========================
+   10. TABLE
+========================= */
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  font-size: 13px;
+}
+
+th {
+  padding: 13px 16px;
+
+  text-align: left;
+
+  color: #858594;
+
+  border-bottom: 1px solid var(--line);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.35px;
+}
+
+th:first-child,
+td:first-child {
+  width: 42px;
+  padding-left: 18px;
+}
+
+td {
+  padding: 15px 16px;
+
+  color: #5e5e6e;
+
+  border-bottom: 1px solid #f0f0f4;
+}
+
+/* Employee */
+
+.employee {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--ink);
+
+  font-weight: 600;
+}
+
+.employee small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #8e8e9d;
+
+  font-size: 11px;
+  font-weight: 400;
+}
+
+
+/* =========================
+   11. DEPARTMENT & STATUS
+========================= */
+
+.dept {
+  padding: 4px 7px;
+
+  background: #f4f2ff;
+  color: #685dcc;
+
+  border-radius: 4px;
+
+  font-size: 11px;
+}
+
+.status {
+  font-size: 11px;
+}
+
+.status::before {
+  content: "";
+
+  display: inline-block;
+
+  width: 7px;
+  height: 7px;
+
+  margin-right: 6px;
+
+  background: #41b77a;
+
+  border-radius: 50%;
+}
+
+.status.leave::before {
+  background: #e9a039;
+}
+
+
+/* =========================
+   12. THREE DOT ACTION MENU
+========================= */
+
+.more {
+  border: 0;
+  background: transparent;
+
+  color: #999;
+
+  font-size: 19px;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+}
+
+.row-actions {
+  position: absolute;
+
+  right: 38px;
+
+  z-index: 2;
+
+  display: none;
+
+  margin-top: -35px;
+  padding: 5px;
+
+  background: white;
+
+  border: 1px solid var(--line);
+  border-radius: 7px;
+
+  box-shadow: 0 7px 18px #24243d20;
+}
+
+.row-actions.open {
+  display: grid;
+}
+
+.row-actions button {
+  padding: 7px 19px 7px 9px;
+
+  border: 0;
+  border-radius: 4px;
+
+  background: white;
+
+  text-align: left;
+
+  font: 12px "DM Sans";
+
+  cursor: pointer;
+}
+
+.row-actions button:hover {
+  background: var(--light-purple);
+  color: var(--purple);
+}
+
+.row-actions button.delete:hover {
+  background: #fff0f0;
+  color: #d65050;
+}
+
+
+/* =========================
+   13. FOOTER & PAGINATION
+========================= */
+
+footer {
+  height: 59px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 17px;
+
+  color: #878796;
+
+  font-size: 12px;
+}
+
+.pages {
+  display: flex;
+  gap: 4px;
+}
+
+.pages button {
+  width: 28px;
+  height: 27px;
+
+  background: white;
+
+  border: 1px solid var(--line);
+  border-radius: 5px;
+
+  color: #69697a;
+}
+
+.pages button.current {
+  background: #f1f0ff;
+  color: #5d53ca;
+
+  border-color: #dddafa;
+}
+
+.pages button:disabled {
+  opacity: 0.4;
+}
+
+
+/* =========================
+   14. OVERLAY
+========================= */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 6;
+
+  background: #17172633;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: 0.25s;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* =========================
+   15. EMPLOYEE DETAILS PANEL
+========================= */
+
+.details {
+  position: fixed;
+
+  top: 0;
+  right: -430px;
+
+  z-index: 7;
+
+  width: 410px;
+  height: 100vh;
+
+  padding: 34px;
+
+  background: white;
+
+  box-shadow: -8px 0 30px #22223b20;
+
+  transition: 0.28s;
+}
+
+.details.open {
+  right: 0;
+}
+
+.close {
+  position: absolute;
+
+  top: 19px;
+  right: 22px;
+
+  width: 29px;
+  height: 29px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #f4f4f8;
+
+  color: #666;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+.detail-head {
+  padding: 24px 0 22px;
+
+  text-align: center;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.detail-head .avatar {
+  width: 68px;
+  height: 68px;
+
+  margin: auto;
+
+  font-size: 20px;
+}
+
+.detail-head h2 {
+  margin: 13px 0 4px;
+
+  font: 700 20px "Plus Jakarta Sans";
+}
+
+.detail-head p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+.detail-section {
+  padding: 21px 0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.detail-section h3 {
+  margin: 0 0 15px;
+
+  color: #9292a0;
+
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 8px 0;
+
+  font-size: 13px;
+}
+
+.info span {
+  color: var(--muted);
+}
+
+
+/* =========================
+   16. MODAL
+========================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+
+  z-index: 8;
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-box {
+  position: relative;
+
+  width: 420px;
+
+  padding: 29px;
+
+  background: white;
+
+  border-radius: 13px;
+
+  box-shadow: 0 15px 40px #1d1d372e;
+}
+
+.modal-box h2 {
+  margin: 0;
+
+  font: 700 21px "Plus Jakarta Sans";
+}
+
+.modal-box > p {
+  margin: 7px 0 20px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   17. FORM
+========================= */
+
+form {
+  display: grid;
+  gap: 15px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+
+  margin-top: 6px;
+  padding: 10px;
+
+  background: white;
+
+  border: 1px solid #dedee7;
+  border-radius: 7px;
+
+  font: 13px "DM Sans";
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+
+  margin-top: 5px;
+}
+
+
+/* =========================
+   18. RESPONSIVE - TABLET
+========================= */
+
+@media (max-width: 1000px) {
+  .sidebar {
+    width: 210px;
+  }
+
+  main {
+    margin-left: 210px;
+  }
+
+  .content,
+  header {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================
+   19. RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .sidebar {
+    display: none;
+  }
+
+  main {
+    margin: 0;
+  }
+
+  header {
+    padding: 0 16px;
+  }
+
+  .content {
+    padding: 25px 16px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+
+  .stats article {
+    padding: 12px;
+  }
+
+  .stats strong {
+    font-size: 18px;
+  }
+
+  .table-card {
+    overflow: hidden;
+  }
+
+  .table-wrap {
+    overflow: auto;
+  }
+
+  .title-row {
+    gap: 15px;
+  }
+
+  .title-row h1 {
+    font-size: 23px;
+  }
+
+  .primary {
+    padding: 10px;
+    white-space: nowrap;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .sort {
+    display: none;
+  }
+
+  .filter-menu {
+    right: 15px;
+    left: auto;
+  }
+
+  .profile div {
+    display: none;
+  }
+
+  .profile {
+    padding-left: 10px;
+  }
+
+  .details {
+    width: 100%;
+    right: -100%;
+  }
+
+  .modal-box {
+    width: calc(100% - 30px);
+  }
+}
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+  text-align: center;
+  padding: 45px 20px !important;
+  color: var(--muted);
+}
+
+.empty-state strong {
+  display: block;
+  color: var(--ink);
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.empty-state p {
+  margin: 5px 0 0;
+  font-size: 12px;
+}
+
+.empty-icon {
+  font-size: 25px;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 100;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: #20202d;
+  color: white;
+  font-size: 13px;
+  box-shadow: 0 8px 25px #20202d25;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast.error {
+  background: #d9534f;
+}
+
+
+/* =========================
+   THEME BUTTON
+========================= */
+
+.theme-toggle {
+  position: fixed;
+  right: 25px;
+  top: 90px;
+  z-index: 20;
+
+  width: 38px;
+  height: 38px;
+
+  border: 1px solid var(--line);
+  border-radius: 50%;
+
+  background: white;
+  color: var(--ink);
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px #20202d12;
+}
+
+
+/* =========================
+   EXPORT BUTTON
+========================= */
+
+.export-btn {
+  height: 37px;
+  white-space: nowrap;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark {
+  --ink: #f4f4f7;
+  --muted: #a7a7b5;
+  --line: #353541;
+
+  background: #17171f;
+}
+
+body.dark .sidebar,
+body.dark header,
+body.dark .table-card,
+body.dark .stats article,
+body.dark .details,
+body.dark .modal-box,
+body.dark .filter-menu,
+body.dark .row-actions {
+  background: #22222c;
+  color: var(--ink);
+}
+
+body.dark .workspace,
+body.dark .search,
+body.dark .filter,
+body.dark .sort,
+body.dark .secondary,
+body.dark input,
+body.dark select,
+body.dark .pages button,
+body.dark .theme-toggle {
+  background: #292934;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+body.dark .employee {
+  color: var(--ink);
+}
+
+body.dark .employee small {
+  color: #a0a0ad;
+}
+
+body.dark td {
+  color: #c0c0ca;
+  border-color: #30303b;
+}
+
+body.dark th {
+  border-color: var(--line);
+}
+
+body.dark .nav-item {
+  color: #b5b5c1;
+}
+
+body.dark .nav-item:hover,
+body.dark .nav-item.active {
+  background: #302e4c;
+  color: #a9a2ff;
+}
+
+body.dark .support {
+  background: #292934;
+}
+
+body.dark .row-actions button {
+  background: #22222c;
+  color: var(--ink);
+}
+
+body.dark .modal-box input,
+body.dark .modal-box select {
+  background: #292934;
+  color: white;
+}

@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>PeopleFlow — Employee Management</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Row Action Menu CSS -->
+    <style>
+        .more {
+            border: 0;
+            background: transparent;
+        }
+
+        .row-actions {
+            position: absolute;
+            right: 38px;
+            margin-top: -35px;
+            background: #fff;
+            border: 1px solid #e9e9ef;
+            box-shadow: 0 7px 18px #24243d20;
+            border-radius: 7px;
+            padding: 5px;
+            z-index: 2;
+            display: none;
+        }
+
+        .row-actions.open {
+            display: grid;
+        }
+
+        .row-actions button {
+            border: 0;
+            background: #fff;
+            padding: 7px 19px 7px 9px;
+            text-align: left;
+            font: 12px 'DM Sans';
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .row-actions button:hover {
+            background: #f1f0ff;
+            color: #635bda;
+        }
+
+        .row-actions button.delete:hover {
+            background: #fff0f0;
+            color: #d65050;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================== SIDEBAR ==================== -->
+
+    <aside class="sidebar">
+
+        <!-- Brand -->
+        <div class="brand">
+            <span class="brand-mark">P</span>
+            <span>PeopleFlow</span>
+        </div>
+
+        <!-- Workspace -->
+        <div class="workspace">
+
+            <span class="workspace-icon">A</span>
+
+            <div>
+                <strong>Acme, Inc.</strong>
+                <small>Workspace</small>
+            </div>
+
+            <span class="chev">⌄</span>
+
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+
+            <a href="#" class="nav-item">
+                <span>▦</span>
+                Overview
+            </a>
+
+            <a href="#" class="nav-item active">
+                <span>♙</span>
+                Employees
+                 <b id="employeeCount">8</b>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>▣</span>
+                Departments
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>◷</span>
+                Time off
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>◫</span>
+                Documents
+            </a>
+
+        </nav>
+
+        <!-- Sidebar Bottom -->
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-item">
+                <span>⚙</span>
+                Settings
+            </a>
+
+            <div class="support">
+
+                <span>?</span>
+
+                <div>
+                    <strong>Need help?</strong>
+                    <small>Visit support center</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+
+    <main>
+
+        <!-- Header -->
+        <header>
+
+            <div class="crumb">
+                People
+                <span>/</span>
+                Employees
+            </div>
+
+            <div class="header-actions">
+
+                <button class="icon-btn" aria-label="notifications">
+                    ♧
+                    <i></i>
+                </button>
+
+                <div class="profile">
+
+                    <span class="avatar avatar-small orange">
+                        JP
+                    </span>
+
+                    <div>
+                        <strong>Jordan P.</strong>
+                        <small>Admin</small>
+                    </div>
+
+                    <span>⌄</span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==================== PAGE CONTENT ==================== -->
+
+        <section class="content">
+
+            <!-- Page Title -->
+            <div class="title-row">
+
+                <div>
+                    <h1>Employees</h1>
+                    <p>Manage your team and their information.</p>
+                </div>
+
+                <button class="primary" id="addBtn">
+                    <span>+</span>
+                    Add employee
+                </button>
+
+            </div>
+
+
+            <!-- ==================== STATISTICS ==================== -->
+
+            <section class="stats">
+
+                <!-- Total Employees -->
+                <article>
+
+                    <div class="stat-icon purple">
+                        ♙
+                    </div>
+
+                    <div>
+                        <small>Total employees</small>
+                        <strong>24</strong>
+                        <em class="positive">↑ 8.3%</em>
+                    </div>
+
+                </article>
+
+
+                <!-- On Leave -->
+                <article>
+
+                    <div class="stat-icon amber">
+                        ◉
+                    </div>
+
+                    <div>
+                        <small>On leave today</small>
+                        <strong>3</strong>
+                        <em>12.5% of team</em>
+                    </div>
+
+                </article>
+
+
+                <!-- Remote -->
+                <article>
+
+                    <div class="stat-icon blue">
+                        ⌂
+                    </div>
+
+                    <div>
+                        <small>Remote</small>
+                        <strong>9</strong>
+                        <em>37.5% of team</em>
+                    </div>
+
+                </article>
+
+
+                <!-- New Employees -->
+                <article>
+
+                    <div class="stat-icon green">
+                        ◷
+                    </div>
+
+                    <div>
+                        <small>New this month</small>
+                        <strong>2</strong>
+                        <em class="positive">↑ 1 since last month</em>
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- ==================== EMPLOYEE TABLE ==================== -->
+
+            <section class="table-card">
+
+                <!-- Search / Filter / Sort -->
+                <div class="table-tools">
+
+                    <div class="search">
+
+                        <span>⌕</span>
+
+                        <input
+                            id="searchInput"
+                            placeholder="Search employees..."
+                        />
+
+                    </div>
+
+                    <button class="filter" id="filterBtn">
+                        ☷ Filters
+                        <b>⌄</b>
+                    </button>
+
+                    <button class="sort" id="sortBtn">
+                        ⇅ Sort
+                    </button>
+
+                </div>
+
+
+                <!-- Filter Menu -->
+                <div class="filter-menu" id="filterMenu">
+
+                    <strong>Department</strong>
+
+                    <button data-filter="All">
+                        All departments
+                    </button>
+
+                    <button data-filter="Design">
+                        Design
+                    </button>
+
+                    <button data-filter="Engineering">
+                        Engineering
+                    </button>
+
+                    <button data-filter="Marketing">
+                        Marketing
+                    </button>
+
+                    <button data-filter="Operations">
+                        Operations
+                    </button>
+
+                </div>
+
+
+                <!-- Employee Table -->
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    <input
+                                        type="checkbox"
+                                        id="selectAll"
+                                        aria-label="Select all employees"
+                                    />
+                                </th>
+
+                                <th>
+                                    EMPLOYEE
+                                    <span>↕</span>
+                                </th>
+
+                                <th>
+                                    DEPARTMENT
+                                </th>
+
+                                <th>
+                                    ROLE
+                                </th>
+
+                                <th>
+                                    STATUS
+                                </th>
+
+                                <th>
+                                    START DATE
+                                </th>
+
+                                <th></th>
+
+                            </tr>
+
+                        </thead>
+
+                        <!-- JavaScript will insert employees here -->
+                        <tbody id="employeeRows"></tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- Pagination -->
+                <footer>
+
+                    <span>
+                        Showing
+                        <strong id="showing">1–8</strong>
+                        of
+                        <strong id="total">24</strong>
+                        employees
+                    </span>
+
+                    <div class="pages">
+
+                        <button disabled>‹</button>
+
+                        <button class="current">
+                            1
+                        </button>
+
+                        <button>
+                            2
+                        </button>
+
+                        <button>
+                            3
+                        </button>
+
+                        <button>
+                            ›
+                        </button>
+
+                    </div>
+
+                </footer>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================== OVERLAY ==================== -->
+
+    <div class="overlay" id="overlay"></div>
+
+
+    <!-- ==================== EMPLOYEE DETAILS ==================== -->
+
+    <aside class="details" id="details">
+
+        <button
+            class="close"
+            id="closeDetails"
+        >
+            ×
+        </button>
+
+        <div id="detailContent"></div>
+
+    </aside>
+
+
+    <!-- ==================== ADD / EDIT EMPLOYEE MODAL ==================== -->
+
+    <div class="modal" id="modal">
+
+        <div class="modal-box">
+
+            <button
+                class="close"
+                id="closeModal"
+                aria-label="Close dialog"
+            >
+                ×
+            </button>
+
+            <h2 id="modalTitle">
+                Add employee
+            </h2>
+
+            <p id="modalDescription">
+                Create a new employee profile for your workspace.
+            </p>
+
+
+            <!-- Employee Form -->
+            <form id="employeeForm">
+
+                <!-- Name -->
+                <label>
+                    Full name
+
+                    <input
+                        id="employeeName"
+                        required
+                        placeholder="e.g. Jamie Lee"
+                    />
+                </label>
+
+
+                <!-- Email -->
+                <label>
+                    Work email
+
+                    <input
+                        id="employeeEmail"
+                        required
+                        type="email"
+                        placeholder="jamie@acme.com"
+                    />
+                </label>
+
+
+                <!-- Department -->
+                <label>
+                    Department
+
+                    <select id="employeeDepartment">
+
+                        <option>Engineering</option>
+                        <option>Design</option>
+                        <option>Marketing</option>
+                        <option>Operations</option>
+
+                    </select>
+                </label>
+
+
+                <!-- Role -->
+                <label>
+                    Role
+
+                    <input
+                        id="employeeRole"
+                        required
+                        placeholder="e.g. Software Engineer"
+                    />
+                </label>
+
+
+                <!-- Status -->
+                <label>
+                    Status
+
+                    <select id="employeeStatus">
+
+                        <option>Active</option>
+                        <option>On leave</option>
+
+                    </select>
+
+                </label>
+
+
+                <!-- Form Buttons -->
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="secondary"
+                        id="cancelModal"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        class="primary"
+                        id="saveEmployee"
+                    >
+                        Create employee
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>
